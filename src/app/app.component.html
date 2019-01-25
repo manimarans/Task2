@@ -1,0 +1,29 @@
+<div class="task-name">
+    Task 2 : Drag and Drop the Form controls
+</div>
+<div class="Main"> 
+    <div *ngIf="!myservice.isShowned" class="container" [cdkDropListConnectedTo]="secondList" [cdkDropListData]="controlList" #firstList="cdkDropList" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div class = "header" >Controls to drag
+      </div>
+      <div  class = "item" *ngFor="let control of controlList"  cdkDrag>{{control}}
+      </div>
+    </div>
+  
+    <div class="container" cdkDropList [cdkDropListData]="FormList" 
+    [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+    (cdkDropListDropped)="drop($event)" >
+      <div class = "header" >Drop the controls here
+      </div>
+      <div class = "item" *ngFor="let formControl of FormList"  cdkDrag>{{formControl}}
+      </div>
+      <div class = "button" (click)="previewClicked()">preview
+      </div>
+    </div>
+  </div>
+
+<div *ngIf="myservice.isShowned" class="popup">
+  <div class="popup-header">
+        Form Control
+  </div>
+  <app-formbuilder [data]= "controlData" ></app-formbuilder> 
+</div>

@@ -1,0 +1,67 @@
+.item{
+    background-color: antiquewhite;
+    margin: 5px 0;  
+    display: block; 
+
+}
+.container{
+    padding: 10px;
+    margin: auto;
+    width : 40%;
+    height : 50%;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.Main{
+    display: flex;
+    margin: 25px 10px;
+}
+.header{
+    background-color: aqua;
+    margin: 7px 0;  
+    height: 25px;
+    display: block;
+    text-align: center;
+}
+.button{
+    background-color: rgb(19, 180, 13);
+    border: 1px solid;
+    border-radius: 3px;
+    margin: 7px auto; 
+    width : 80px; 
+    height: 25px;
+    display: block;
+    text-align: center;
+}
+.task-name{
+    background-color: silver;
+    margin: 7px 0;  
+    height: 25px;
+    display: block;
+    text-align: center;
+    width : 100%;
+    padding: 10px;
+}
+.popup{
+    top: 90px;
+    left: 400px;
+    bottom: 20px;
+    width: 450px;
+    height: 500px;
+    background-color: #fffacd;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid;
+    border-radius: 8px;
+}
+.popup-header{
+    top: 0px;
+    bottom : 0px;
+    position : absolute;
+    width : 100%;
+    background-color: aqua;
+    border-radius: 6px 6px 0 0;
+    height: 25px;
+    display: block;
+    text-align: center;
+}

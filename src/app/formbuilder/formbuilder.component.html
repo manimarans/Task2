@@ -1,0 +1,16 @@
+<div class="popup-container">
+    
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="form-control">
+    <div *ngFor="let item of data">
+        <label *ngIf="item.type ==='text' || item.type ==='password'">{{item.name}}</label>
+        <input *ngIf="item.type ==='text' || item.type ==='password'"  [placeholder]="item.name" [attr.type]="item.type" [formControlName]="item.name">
+        <label *ngIf="item.type ==='dropdown'">{{item.name}}</label>
+        <select *ngIf="item.type ==='dropdown'" class="form-control" [formControlName]="item.name" >
+          <option *ngFor="let opt of item.options" [value]="opt.key">{{opt.label}}</option>
+        </select>
+    </div>
+      <button class="submit" type="submit">
+          Submit
+      </button>
+    </form>
+</div>

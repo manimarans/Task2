@@ -1,0 +1,40 @@
+
+
+
+.submit{
+    background-color: rgb(19, 180, 13);
+    border: 1px solid;
+    border-radius: 3px;
+    margin: 7px auto; 
+    width : 80px; 
+    height: 25px;
+    display: block;
+    text-align: center;
+}
+.popup-container{
+
+    padding: 50px;
+}
+input{
+    width: 50%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+select{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
