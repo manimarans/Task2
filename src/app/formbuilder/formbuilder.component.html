@@ -2,13 +2,13 @@
     <form [formGroup]="form" (ngSubmit)="submitForm()" class="form-control">
         <div *ngFor="let item of data">
             <label>{{item.name}}</label>
-            <input  [class.required]="!form.controls[item.name].valid" *ngIf="item.type ==='text' || item.type ==='password'"  [placeholder]="item.name" [attr.type]="item.type" [formControlName]="item.name">
+            <input  [class.required]="!form.controls[item.name].valid && form.controls[item.name].dirty" *ngIf="item.type ==='text' || item.type ==='password'"  [placeholder]="item.name" [attr.type]="item.type" [formControlName]="item.name">
             <select *ngIf="item.type ==='dropdown'" class="form-control" [formControlName]="item.name" >
             <option *ngFor="let opt of item.options" [value]="opt.key">{{opt.label}}</option>
             </select>
-            <div *ngIf="!form.controls[item.name].valid && form.controls[item.name].dirty">
+            <!-- <div *ngIf="!form.controls[item.name].valid && form.controls[item.name].dirty">
                 {{item.name }} is a required field.
-            </div>
+            </div> -->
         </div>
         <button class="submit" [disabled]="!form.valid" type="submit">
             Submit
