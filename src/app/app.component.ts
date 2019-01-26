@@ -13,6 +13,8 @@ export class AppComponent {
   controlList = [] = ["Text Box","Drop Down", "Password"];
   FormList = [] = [];
   controlData : Meta[] = [];
+  itemEdited : boolean;
+  editedIndex : number;
   isPreviewClicked = false;
 
   constructor(private myservice : PopupService){
@@ -24,7 +26,7 @@ export class AppComponent {
       // console.log(this.controlList[event.previousIndex]);
       
       if(this.controlList[event.previousIndex] === "Text Box" || this.controlList[event.previousIndex]==="Password"){
-        let ob : Meta = {
+          let ob : Meta = {
           name : "Control "+(this.controlData.length+1),
           type : this.controlList[event.previousIndex]==="Text Box"?"text":"password",
           value : "",
@@ -45,11 +47,18 @@ export class AppComponent {
       }
       // console.log(this.controlData);
       
-        copyArrayItem(event.previousContainer.data,event.container.data,event.previousIndex, event.currentIndex)
+        copyArrayItem(event.previousContainer.data,event.container.data,event.previousIndex, this.controlData.length-1)
       } 
     
     }
     previewClicked(){
       this.myservice.isShowned = true;
+    }
+    itemClicked(indexOfItem){
+     this.editedIndex  = indexOfItem;
+    }
+    setNameClicked(evt : Event){
+      this.editedIndex=-1;
+      evt.stopPropagation();
     }
 }

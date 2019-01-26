@@ -9,12 +9,12 @@ import { PopupService } from '../popup.service';
   styleUrls: ['./formbuilder.component.css']
 })
 export class FormbuilderComponent implements OnInit {
-  @Input() data:Meta[]=[];
+  @Input() data:Meta[];
 
   ngOnInit() {
     var object = {};
     this.data.forEach(item => {
-      object[item.name] = item.value;
+      object[item.name] = [item.value, Validators.required];
     });
      this.form = this.fb.group(object);
   }
