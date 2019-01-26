@@ -16,9 +16,9 @@
       </div>
       <div class = "item" *ngFor="let formControl of FormList, let i = index" (click)="itemClicked(i)"  >{{formControl}}
           <div *ngIf="editedIndex===i">
-              Set name or label of control :{{editedIndex}} {{editedIndex===i}}
+              Set name for the control : 
               <input [(ngModel)]="controlData[i].name">
-              <button  (click)="setNameClicked($event)">set name</button>
+              <!-- <button  (click)="setNameClicked($event)">set name</button> -->
           </div>
       </div>
       <div></div>
